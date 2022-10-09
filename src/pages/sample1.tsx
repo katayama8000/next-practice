@@ -60,8 +60,8 @@ const Sample1 = () => {
   };
 
   const result = async () => {
-    const x = await asyncFunc();
-    console.log("x", x);
+    const ret = await asyncFunc();
+    console.log("ret", ret);
   };
 
   result();
@@ -75,5 +75,12 @@ const Sample1 = () => {
     </>
   );
 };
+
+export const htmlComp = (
+  <>
+    <h1>comp</h1>
+    <div>this is html</div>
+  </>
+);
 
 export default Sample1;
