@@ -21,7 +21,8 @@ const Home: NextPage = () => {
     <div className="p-20">
       <LinkList title="Promise" path="/sample1" />
       <LinkList title="swr" path="/sample2" />
-      <LinkList title="useMemo" path="/sample3" />
+      <LinkList title="hooks" path="/sample3" />
+      <LinkList title="chat" path="/sample4" />
       <h1>Hello Next.js 👋</h1>
       <Sample child="Hello Child" />
     </div>
