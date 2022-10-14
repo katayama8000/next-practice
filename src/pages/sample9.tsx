@@ -49,7 +49,9 @@ const Sample9 = () => {
           <input
             type="text"
             value={text}
-            onChange={(e) => setText(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setText(e.target.value)
+            }
           />
         </label>
         <button onClick={() => dispatch({ type: "ADD", text: text })}>
