@@ -45,7 +45,7 @@ const Sample9 = () => {
       <h1>useReducer</h1>
       <div>
         <label>
-          todo :
+          todo
           <input
             type="text"
             value={text}
@@ -55,16 +55,16 @@ const Sample9 = () => {
         <button onClick={() => dispatch({ type: "ADD", text: text })}>
           Add todo
         </button>
-        <ul>
+        <ol>
           {todoList.map((todo) => (
-            <div key={todo.id}>
-              <li>{todo.text}</li>
+            <div key={todo.id} className="flex">
+              <li className="">{todo.text}</li>
               <button onClick={() => dispatch({ type: "DELETE", id: todo.id })}>
                 ✖
               </button>
             </div>
           ))}
-        </ul>
+        </ol>
       </div>
     </div>
   );
