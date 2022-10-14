@@ -22,7 +22,8 @@ const LINKS = [
   { title: "hooks", path: "/sample3" },
   { title: "chat", path: "/sample4" },
   { title: "recoil", path: "/sample5" },
-  { title: "useref", path: "/sample6" },
+  { title: "useref-1", path: "/sample6" },
+  { title: "useref-2", path: "/sample7" },
 ] as const;
 
 const Home: NextPage = () => {

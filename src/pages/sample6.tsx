@@ -32,7 +32,7 @@ const Sample6 = () => {
   return (
     <div className="m-auto mt-20 max-w-3xl">
       <article>
-        <h1>useref</h1>
+        <h1>useRef-1</h1>
         {ref.current}
       </article>
       <input ref={inputElement} />
