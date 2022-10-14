@@ -3,7 +3,7 @@ import React, { FC, useEffect } from "react";
 type TButtonProps = {
   onClick?: () => void;
   children: React.ReactNode;
-  color?: "blue" | "red" | "green" | "yellow" | "purple";
+  color?: "blue" | "red" | "green" | "yellow" | "purple" | "other";
 };
 
 export const TButton: FC<TButtonProps> = ({
@@ -39,6 +39,10 @@ export const TButton: FC<TButtonProps> = ({
           "mr-2 mb-2 rounded-lg border border-purple-700 px-5 py-2.5 text-center text-sm font-medium text-purple-700 hover:bg-purple-800 hover:text-white focus:outline-none focus:ring-4 focus:ring-purple-300 dark:border-purple-500 dark:text-purple-500 dark:hover:bg-purple-600 dark:hover:text-white dark:focus:ring-purple-800"
         );
         break;
+      case "other":
+        setStyle(
+          "px-2 py-1  bg-pink-300 text-lg text-white font-semibold rounded  hover:bg-pink-500 hover:shadow-sm hover:translate-y-0.5 transform transition "
+        );
     }
   }, [color]);
 

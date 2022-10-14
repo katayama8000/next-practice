@@ -24,11 +24,12 @@ const LINKS = [
   { title: "recoil", path: "/sample5" },
   { title: "useref-1", path: "/sample6" },
   { title: "useref-2", path: "/sample7" },
+  { title: "cleanUp", path: "/sample8" },
 ] as const;
 
 const Home: NextPage = () => {
   return (
-    <div className="p-20">
+    <div>
       <div>
         {LINKS.map((link) => {
           return (

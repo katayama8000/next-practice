@@ -4,7 +4,7 @@ import React from "react";
 
 const Sample5 = () => {
   return (
-    <div className="m-auto mt-20 max-w-3xl">
+    <div>
       <InputTask></InputTask>
       <AddTask></AddTask>
     </div>

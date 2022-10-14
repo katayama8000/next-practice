@@ -3,6 +3,8 @@ import type { AppProps } from "next/app";
 import { MantineProvider } from "@mantine/core";
 import Head from "next/head";
 import { RecoilRoot } from "recoil";
+import Link from "next/link";
+import { TButton } from "src/lib/TButton";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -10,9 +12,16 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Next.js</title>
       </Head>
+      <div className="ml-[100px] mt-10">
+        <Link href="/">
+          <TButton color="other">TOP</TButton>
+        </Link>
+      </div>
       <RecoilRoot>
         <MantineProvider withGlobalStyles withNormalizeCSS>
-          <Component {...pageProps} />
+          <main className="m-auto mt-10 max-w-6xl">
+            <Component {...pageProps} />
+          </main>
         </MantineProvider>
       </RecoilRoot>
     </>

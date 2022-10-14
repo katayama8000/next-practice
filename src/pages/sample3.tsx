@@ -18,7 +18,7 @@ const Sample3 = () => {
   const { state, countUp, countDown } = useCounter();
   const sum = React.useMemo(() => state * 2, [state]);
   return (
-    <div className="m-auto w-[300px]">
+    <div>
       <div>{sum}</div>
       <div>{state}</div>
       <button onClick={countUp}>+</button>
