@@ -2,6 +2,7 @@ import "src/lib/tailwind.css";
 import type { AppProps } from "next/app";
 import { MantineProvider } from "@mantine/core";
 import Head from "next/head";
+import { RecoilRoot } from "recoil";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -9,9 +10,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Next.js</title>
       </Head>
-      <MantineProvider withGlobalStyles withNormalizeCSS>
-        <Component {...pageProps} />
-      </MantineProvider>
+      <RecoilRoot>
+        <MantineProvider withGlobalStyles withNormalizeCSS>
+          <Component {...pageProps} />
+        </MantineProvider>
+      </RecoilRoot>
     </>
   );
 }

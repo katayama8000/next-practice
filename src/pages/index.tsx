@@ -16,13 +16,24 @@ export const LinkList: React.FC<Props> = ({ title, path }) => {
   );
 };
 
+const LINKS = [
+  { title: "Promise", path: "/sample1" },
+  { title: "swr", path: "/sample2" },
+  { title: "hooks", path: "/sample3" },
+  { title: "chat", path: "/sample4" },
+  { title: "recoil", path: "/sample5" },
+] as const;
+
 const Home: NextPage = () => {
   return (
     <div className="p-20">
-      <LinkList title="Promise" path="/sample1" />
-      <LinkList title="swr" path="/sample2" />
-      <LinkList title="hooks" path="/sample3" />
-      <LinkList title="chat" path="/sample4" />
+      <div>
+        {LINKS.map((link) => {
+          return (
+            <LinkList key={link.title} title={link.title} path={link.path} />
+          );
+        })}
+      </div>
       <h1>Hello Next.js 👋</h1>
       <Sample child="Hello Child" />
     </div>
