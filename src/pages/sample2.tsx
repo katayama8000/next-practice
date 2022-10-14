@@ -5,7 +5,7 @@ const Sample2 = () => {
   const value = useGetJson(1);
   return (
     <>
-      <div>sample2</div>
+      <h1>useSWR</h1>
       {value}
     </>
   );
