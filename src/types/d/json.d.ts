@@ -8,5 +8,5 @@ interface jsonplaceholderType {
 }
 
 declare module "jsonplaceholder" {
-  export = jsonplaceholderType;
+  export const jsonplaceholder: jsonplaceholderType[];
 }
