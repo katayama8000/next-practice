@@ -8,6 +8,9 @@ export const pagesPath = {
   "sample11": {
     $url: (url?: { hash?: string }) => ({ pathname: '/sample11' as const, hash: url?.hash })
   },
+  "sample12": {
+    $url: (url?: { hash?: string }) => ({ pathname: '/sample12' as const, hash: url?.hash })
+  },
   "sample2": {
     $url: (url?: { hash?: string }) => ({ pathname: '/sample2' as const, hash: url?.hash })
   },
