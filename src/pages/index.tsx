@@ -3,33 +3,36 @@ import { Sample } from "@component/Sample";
 import Link from "next/link";
 
 type Props = {
-  title: string;
-  path: string;
+  title: titleType;
+  url: urlType;
 };
 
-export const LinkList: React.FC<Props> = ({ title, path }) => {
+export const LinkList: React.FC<Props> = ({ title, url }) => {
   return (
     <>
-      <Link href={path}>{title}</Link>
+      <Link href={url}>{title}</Link>
       <span className="mx-2">|</span>
     </>
   );
 };
 
+type urlType = typeof LINKS[number]["url"];
+type titleType = typeof LINKS[number]["title"];
+
 const LINKS = [
-  { title: "Promise", path: "/sample1" },
-  { title: "swr", path: "/sample2" },
-  { title: "hooks", path: "/sample3" },
-  { title: "chat", path: "/sample4" },
-  { title: "recoil", path: "/sample5" },
-  { title: "useref-1", path: "/sample6" },
-  { title: "useref-2", path: "/sample7" },
-  { title: "cleanUp", path: "/sample8" },
-  { title: "useReducer", path: "/sample9" },
-  { title: "useReducer fetch", path: "/sample10" },
-  { title: "useMemo", path: "/sample11" },
-  { title: "ssr", path: "/sample12" },
-  { title: "ssg", path: "/sample13" },
+  { title: "Promise", url: "/sample1" },
+  { title: "swr", url: "/sample2" },
+  { title: "hooks", url: "/sample3" },
+  { title: "chat", url: "/sample4" },
+  { title: "recoil", url: "/sample5" },
+  { title: "useref-1", url: "/sample6" },
+  { title: "useref-2", url: "/sample7" },
+  { title: "cleanUp", url: "/sample8" },
+  { title: "useReducer", url: "/sample9" },
+  { title: "useReducer fetch", url: "/sample10" },
+  { title: "useMemo", url: "/sample11" },
+  { title: "ssr", url: "/sample12" },
+  { title: "ssg", url: "/sample13" },
 ] as const;
 
 const Home: NextPage = () => {
@@ -38,7 +41,7 @@ const Home: NextPage = () => {
       <div>
         {LINKS.map((link) => {
           return (
-            <LinkList key={link.title} title={link.title} path={link.path} />
+            <LinkList key={link.title} title={link.title} url={link.url} />
           );
         })}
       </div>
