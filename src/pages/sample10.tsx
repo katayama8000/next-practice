@@ -1,9 +1,10 @@
 import React, { useReducer } from "react";
 import axios from "axios";
+import { Button } from "@mantine/core";
 
 type stateType = {
   isLoading: boolean;
-  isError: string;
+  isError: boolean;
   data: string;
 };
 
@@ -15,7 +16,7 @@ type actionType = {
 const Sample10 = () => {
   const initialState = {
     isLoading: true,
-    isError: "",
+    isError: false,
     data: "",
   };
 
@@ -28,13 +29,13 @@ const Sample10 = () => {
       case "success":
         return {
           isLoading: false,
-          isError: "",
+          isError: false,
           data: action.payload,
         };
       case "fail":
         return {
           isLoading: false,
-          isError: "エラーが発生しました。",
+          isError: true,
           data: "",
         };
       default:
@@ -55,7 +56,6 @@ const Sample10 = () => {
       .get(url)
       .then((result) => {
         const data = result.data;
-        console.log(data);
         dispatch({ type: "success", payload: data.login });
       })
       .catch((error) => {
@@ -65,10 +65,12 @@ const Sample10 = () => {
   return (
     <div>
       <h1>fetch</h1>
-      <button onClick={fetchData}>githubからデータを取得する</button>
+      <Button onClick={fetchData} color="pink">
+        githubからデータを取得する
+      </Button>
       <p>{dataState.isLoading ? "Loading..." : "Finished!"}</p>
       <p>githubのユーザ名：{dataState.data}</p>
-      <p>{dataState.isError ? dataState.isError : ""}</p>
+      <p>{dataState.isError ? "error" : "success"}</p>
     </div>
   );
 };
