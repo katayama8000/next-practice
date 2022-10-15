@@ -4,7 +4,7 @@ import React from "react";
 type Props = {
   data: jsonplaceholderType;
 };
-const sample13: NextPage<Props> = (props) => {
+const Sample13: NextPage<Props> = (props) => {
   console.log(props);
   return (
     <div>
@@ -37,4 +37,4 @@ export const getStaticProps = async () => {
 // そのため、ビルド時にデータが取得できない場合は、ビルドエラーになる。
 // そのため、データが取得できない場合は、getServerSidePropsを使用する。
 
-export default sample13;
+export default Sample13;

@@ -33,6 +33,8 @@ const LINKS = [
   { title: "useMemo", url: "/sample11" },
   { title: "ssr", url: "/sample12" },
   { title: "ssg", url: "/sample13" },
+  { title: "key", url: "/sample14" },
+  { title: "immutable", url: "/sample15" },
 ] as const;
 
 const Home: NextPage = () => {
