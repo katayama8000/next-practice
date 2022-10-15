@@ -26,6 +26,7 @@ const LINKS = [
   { title: "useref-2", path: "/sample7" },
   { title: "cleanUp", path: "/sample8" },
   { title: "useReducer", path: "/sample9" },
+  { title: "useReducer fetch", path: "/sample10" },
 ] as const;
 
 const Home: NextPage = () => {
