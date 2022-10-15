@@ -29,6 +29,7 @@ const LINKS = [
   { title: "useReducer fetch", path: "/sample10" },
   { title: "useMemo", path: "/sample11" },
   { title: "ssr", path: "/sample12" },
+  { title: "ssg", path: "/sample13" },
 ] as const;
 
 const Home: NextPage = () => {
