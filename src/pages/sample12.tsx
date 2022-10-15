@@ -4,12 +4,6 @@ type Props = {
   data: jsonplaceholderType;
 };
 
-type jsonplaceholderType = {
-  userId: number;
-  id: number;
-  title: string;
-  body: string;
-};
 const sample12: FC<Props> = (props) => {
   return (
     <div>
