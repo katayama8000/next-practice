@@ -49,6 +49,14 @@ const Home: NextPage = () => {
       </div>
       <h1>Hello Next.js 👋</h1>
       <Sample child="Hello Child" />
+      <article>
+        <ol>
+          <li>Hooks</li>
+          <li>State Management</li>
+          <li>Next.js</li>
+          <li>CSR/SSR/SSG/ISR</li>
+        </ol>
+      </article>
     </div>
   );
 };

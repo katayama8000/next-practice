@@ -2,12 +2,6 @@ import React, { useReducer } from "react";
 import axios from "axios";
 import { Button } from "@mantine/core";
 
-type stateType = {
-  isLoading: boolean;
-  isError: boolean;
-  data: string;
-};
-
 type actionType = {
   type: "init" | "success" | "fail";
   payload: string;
@@ -19,6 +13,8 @@ const Sample10 = () => {
     isError: false,
     data: "",
   };
+
+  type stateType = typeof initialState;
 
   // reducerの関数を定義する。
   const reducerFunction = (state: stateType, action: actionType) => {
