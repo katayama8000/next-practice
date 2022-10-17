@@ -2,8 +2,8 @@ import type { NextPage } from "next";
 import Link from "next/link";
 
 type Props = {
-  title: titleType;
-  url: urlType;
+  title: titleType | youTubeTitleType;
+  url: urlType | youTubeUrlType;
 };
 
 export const LinkList: React.FC<Props> = ({ title, url }) => {
@@ -17,6 +17,8 @@ export const LinkList: React.FC<Props> = ({ title, url }) => {
 
 type urlType = typeof LINKS[number]["url"];
 type titleType = typeof LINKS[number]["title"];
+type youTubeUrlType = typeof YOUTUBE_LINKS[number]["url"];
+type youTubeTitleType = typeof YOUTUBE_LINKS[number]["title"];
 
 const LINKS = [
   { title: "Promise", url: "Sample/sample1" },
@@ -36,6 +38,15 @@ const LINKS = [
   { title: "immutable", url: "Sample/sample15" },
 ] as const;
 
+const YOUTUBE_LINKS = [
+  { title: "Hooks1", url: "YouTube/Hooks1" },
+  { title: "Hooks2", url: "YouTube/Hooks2" },
+  { title: "Hooks3", url: "YouTube/Hooks3" },
+  { title: "Hooks4", url: "YouTube/Hooks4" },
+  { title: "Hooks5", url: "YouTube/Hooks5" },
+  { title: "Hooks6", url: "YouTube/Hooks6" },
+] as const;
+
 const Home: NextPage = () => {
   return (
     <div>
@@ -48,7 +59,11 @@ const Home: NextPage = () => {
         })}
       </div>
       <hr />
-      <h1>YouTube</h1>
+      <h1>Hooks</h1>
+      {YOUTUBE_LINKS.map((link) => {
+        return <LinkList key={link.title} title={link.title} url={link.url} />;
+      })}
+      <hr />
       <h1>Hello Next.js 👋</h1>
       <article>
         <ol>
