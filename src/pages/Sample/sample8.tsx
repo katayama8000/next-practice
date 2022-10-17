@@ -1,4 +1,4 @@
-import { Timer } from "@component/Timer";
+import { Timer } from "@component/Sample/Timer";
 import React, { useState } from "react";
 
 const Sample8 = () => {

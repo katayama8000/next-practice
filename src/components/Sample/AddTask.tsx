@@ -1,7 +1,7 @@
 import React from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { addTitleState, addTitleStateLength } from "../states/addTitleState";
-import { Tasks } from "../types/tasks";
+import { addTitleState, addTitleStateLength } from "src/states/addTitleState";
+import { Tasks } from "src/types/tasks";
 
 export const AddTask = () => {
   const addTitle = useRecoilValue(addTitleState);

@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import { Sample } from "@component/Sample";
 import Link from "next/link";
 
 type Props = {
@@ -20,35 +19,37 @@ type urlType = typeof LINKS[number]["url"];
 type titleType = typeof LINKS[number]["title"];
 
 const LINKS = [
-  { title: "Promise", url: "/sample1" },
-  { title: "swr", url: "/sample2" },
-  { title: "hooks", url: "/sample3" },
-  { title: "chat", url: "/sample4" },
-  { title: "recoil", url: "/sample5" },
-  { title: "useref-1", url: "/sample6" },
-  { title: "useref-2", url: "/sample7" },
-  { title: "cleanUp", url: "/sample8" },
-  { title: "useReducer", url: "/sample9" },
-  { title: "useReducer fetch", url: "/sample10" },
-  { title: "useMemo", url: "/sample11" },
-  { title: "ssr", url: "/sample12" },
-  { title: "ssg", url: "/sample13" },
-  { title: "key", url: "/sample14" },
-  { title: "immutable", url: "/sample15" },
+  { title: "Promise", url: "Sample/sample1" },
+  { title: "swr", url: "Sample/sample2" },
+  { title: "hooks", url: "Sample/sample3" },
+  { title: "chat", url: "Sample/sample4" },
+  { title: "recoil", url: "Sample/sample5" },
+  { title: "useref-1", url: "Sample/sample6" },
+  { title: "useref-2", url: "Sample/sample7" },
+  { title: "cleanUp", url: "Sample/sample8" },
+  { title: "useReducer", url: "Sample/sample9" },
+  { title: "useReducer fetch", url: "Sample/sample10" },
+  { title: "useMemo", url: "Sample/sample11" },
+  { title: "ssr", url: "Sample/sample12" },
+  { title: "ssg", url: "Sample/sample13" },
+  { title: "key", url: "Sample/sample14" },
+  { title: "immutable", url: "Sample/sample15" },
 ] as const;
 
 const Home: NextPage = () => {
   return (
     <div>
       <div>
+        <h1>Sample</h1>
         {LINKS.map((link) => {
           return (
             <LinkList key={link.title} title={link.title} url={link.url} />
           );
         })}
       </div>
+      <hr />
+      <h1>YouTube</h1>
       <h1>Hello Next.js 👋</h1>
-      <Sample child="Hello Child" />
       <article>
         <ol>
           <li>Hooks</li>

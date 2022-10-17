@@ -1,5 +1,5 @@
-import { AddTask } from "@component/AddTask";
-import { InputTask } from "@component/InputTask";
+import { AddTask } from "@component/Sample/AddTask";
+import { InputTask } from "@component/Sample/InputTask";
 import React from "react";
 
 const Sample5 = () => {
