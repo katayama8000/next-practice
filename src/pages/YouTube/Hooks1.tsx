@@ -1,6 +1,6 @@
 import React from "react";
 
-const Hooks = () => {
+const Hooks1 = () => {
   const emailRef = React.useRef<HTMLInputElement>(null);
   const passwordRef = React.useRef<HTMLInputElement>(null);
   // const [email, setEmail] = React.useState<string>("");
@@ -40,4 +40,4 @@ const Hooks = () => {
   );
 };
 
-export default Hooks;
+export default Hooks1;
