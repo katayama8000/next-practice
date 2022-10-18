@@ -55,6 +55,15 @@ export const pagesPath = {
     },
     "Hooks3": {
       $url: (url?: { hash?: string }) => ({ pathname: '/YouTube/Hooks3' as const, hash: url?.hash })
+    },
+    "Hooks4": {
+      $url: (url?: { hash?: string }) => ({ pathname: '/YouTube/Hooks4' as const, hash: url?.hash })
+    },
+    "Hooks5": {
+      $url: (url?: { hash?: string }) => ({ pathname: '/YouTube/Hooks5' as const, hash: url?.hash })
+    },
+    "Hooks6": {
+      $url: (url?: { hash?: string }) => ({ pathname: '/YouTube/Hooks6' as const, hash: url?.hash })
     }
   },
   $url: (url?: { hash?: string }) => ({ pathname: '/' as const, hash: url?.hash })
