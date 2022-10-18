@@ -1,54 +1,58 @@
-import React, { FC, useEffect } from "react";
+import React from "react";
 
 type TButtonProps = {
-  onClick?: () => void;
+  block?: boolean;
   children: React.ReactNode;
-  color?: "blue" | "red" | "green" | "yellow" | "purple" | "other";
+  className?: string;
+  color?: "blue" | "green" | "red" | "yellow" | "indigo" | "dark";
+  disabled?: boolean;
+  rounded?: boolean;
+  size?: "sm" | "md" | "lg";
+  submit?: boolean;
+  onClick?: (event: any) => void;
 };
 
-export const TButton: FC<TButtonProps> = React.forwardRef(
-  ({ onClick, children, color = "blue" }, _ref) => {
-    const [style, setStyle] = React.useState("");
-    useEffect(() => {
-      switch (color) {
-        case "blue":
-          setStyle(
-            "mr-2 mb-2 rounded-lg border border-blue-700 px-5 py-2.5 text-center text-sm font-medium text-blue-700 hover:bg-blue-800 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 dark:border-blue-500 dark:text-blue-500 dark:hover:bg-blue-600 dark:hover:text-white dark:focus:ring-blue-800"
-          );
-          break;
-        case "red":
-          setStyle(
-            "mr-2 mb-2 rounded-lg border border-red-700 px-5 py-2.5 text-center text-sm font-medium text-red-700 hover:bg-red-800 hover:text-white focus:outline-none focus:ring-4 focus:ring-red-300 dark:border-red-500 dark:text-red-500 dark:hover:bg-red-600 dark:hover:text-white dark:focus:ring-red-800"
-          );
-          break;
-        case "green":
-          setStyle(
-            "mr-2 mb-2 rounded-lg border border-green-700 px-5 py-2.5 text-center text-sm font-medium text-green-700 hover:bg-green-800 hover:text-white focus:outline-none focus:ring-4 focus:ring-green-300 dark:border-green-500 dark:text-green-500 dark:hover:bg-green-600 dark:hover:text-white dark:focus:ring-green-800"
-          );
-          break;
-        case "yellow":
-          setStyle(
-            "mr-2 mb-2 rounded-lg border border-yellow-700 px-5 py-2.5 text-center text-sm font-medium text-yellow-700 hover:bg-yellow-800 hover:text-white focus:outline-none focus:ring-4 focus:ring-yellow-300 dark:border-yellow-500 dark:text-yellow-500 dark:hover:bg-yellow-600 dark:hover:text-white dark:focus:ring-yellow-800"
-          );
-          break;
-        case "purple":
-          setStyle(
-            "mr-2 mb-2 rounded-lg border border-purple-700 px-5 py-2.5 text-center text-sm font-medium text-purple-700 hover:bg-purple-800 hover:text-white focus:outline-none focus:ring-4 focus:ring-purple-300 dark:border-purple-500 dark:text-purple-500 dark:hover:bg-purple-600 dark:hover:text-white dark:focus:ring-purple-800"
-          );
-          break;
-        case "other":
-          setStyle(
-            "px-2 py-1  bg-pink-300 text-lg text-white font-semibold rounded  hover:bg-pink-500 hover:shadow-sm hover:translate-y-0.5 transform transition "
-          );
-      }
-    }, [color]);
+const style = {
+  rounded: `rounded-full`, //角を丸くする
+  block: `flex justify-center w-full`, //最大幅まで伸ばす
+  default: `text-white focus:outline-none font-medium py-2 px-4`, //デフォルト
+  sizes: {
+    //サイズ
+    sm: "text-sm",
+    md: "",
+    lg: "text-lg",
+  },
+  colors: {
+    //色
+    blue: `bg-blue-600 focus:ring-2 focus:ring-offset-2 hover:bg-blue-700 focus:ring-blue-500`,
+    green: `bg-green-600 focus:ring-2 focus:ring-offset-2 hover:bg-green-700 focus:ring-green-500`,
+    red: `bg-red-600 focus:ring-2 focus:ring-offset-2 hover:bg-red-700 focus:ring-red-500`,
+    dark: `bg-black focus:ring-2 focus:ring-offset-2 hover:bg-black-600 focus:ring-gray-500`,
+    yellow: `bg-yellow-500 focus:ring-2 focus:ring-offset-2 hover:bg-yellow-600 focus:ring-yellow-500 `,
+    indigo: `bg-indigo-600 focus:ring-2 focus:ring-offset-2 hover:bg-indigo-700 focus:ring-indigo-600`,
+  },
+};
 
-    return (
-      <button type="button" onClick={onClick} className={style}>
-        {children}
-      </button>
-    );
-  }
+export const TButton = ({
+  block = false,
+  children,
+  className,
+  color,
+  disabled = false,
+  rounded,
+  size = "md",
+  submit,
+  onClick,
+}: TButtonProps) => (
+  <button
+    type={submit ? "submit" : "button"}
+    disabled={disabled}
+    onClick={onClick}
+    className={`${className} ${block ? style.block : ""}
+               ${color ? style.colors[color] : style.colors.dark}
+               ${style.default} ${rounded ? style.rounded : "rounded"}
+               ${style.sizes[size]} `}
+  >
+    {children}
+  </button>
 );
-
-TButton.displayName = "TButton";

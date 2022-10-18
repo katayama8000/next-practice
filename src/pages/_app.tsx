@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <div className="ml-[100px] mt-10">
         <Link href="/">
-          <TButton color="other">TOP</TButton>
+          <TButton color="yellow">TOP</TButton>
         </Link>
       </div>
       <RecoilRoot>
