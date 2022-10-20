@@ -36,6 +36,7 @@ const LINKS = [
   { title: "ssg", url: "Sample/sample13" },
   { title: "key", url: "Sample/sample14" },
   { title: "immutable", url: "Sample/sample15" },
+  { title: "enum", url: "Sample/sample16" },
 ] as const;
 
 const YOUTUBE_LINKS = [
