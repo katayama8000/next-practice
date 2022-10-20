@@ -1,30 +1,34 @@
 import React, { useState } from "react";
 
-enum Gender {
-  male = 0,
-  female = 1,
-  all = 2,
-}
+const Gender = {
+  MALE: 0,
+  FEMALE: 1,
+  ALL: 2,
+} as const;
+
+type GenderType = typeof Gender[keyof typeof Gender];
+
 const Sample16 = () => {
-  const [gender, setGender] = useState<number>(0);
+  const [gender, setGender] = useState<GenderType>(0);
   return (
     <div>
       <input
         type="radio"
-        checked={gender === 0}
-        onChange={() => setGender(0)}
+        checked={gender === Gender.MALE}
+        onChange={() => setGender(Gender.MALE)}
       />
       男性
       <input
         type="radio"
-        checked={gender === 1}
-        onChange={() => setGender(1)}
+        checked={gender === Gender.FEMALE}
+        onChange={() => setGender(Gender.FEMALE)}
       />
       女性
       <input
         type="radio"
-        checked={gender === 2}
-        onChange={() => setGender(2)}
+        checked={gender === Gender.ALL}
+        //   エラー
+        onChange={() => setGender(Gender.ALL)}
       />
       全て
     </div>
