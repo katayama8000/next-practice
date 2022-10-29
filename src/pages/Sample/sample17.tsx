@@ -1,5 +1,5 @@
-import { Profile } from "@component/Sample/Profile";
-import React from "react";
+import { Profile } from '@component/Sample/Profile';
+import React from 'react';
 
 const Sample17 = () => {
   return (

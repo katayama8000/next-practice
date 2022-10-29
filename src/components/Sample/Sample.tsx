@@ -1,7 +1,7 @@
-import { Button } from "@mantine/core";
-import React from "react";
-import { FC } from "react";
-import { TButton } from "src/lib/TButton";
+import { Button } from '@mantine/core';
+import React from 'react';
+import { FC } from 'react';
+import { TButton } from 'src/lib/TButton';
 
 type Props = {
   child: string;
@@ -14,7 +14,7 @@ export const Sample: FC<Props> = ({ child }) => {
       <Button className="m-3" color="cyan">
         Hello Button
       </Button>
-      <TButton color="purple">Hello Button</TButton>
+      <TButton color="yellow">Hello Button</TButton>
     </div>
   );
 };

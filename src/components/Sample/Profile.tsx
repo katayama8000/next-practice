@@ -12,7 +12,7 @@ export const Profile: FC<ProfileProps> = ({ currentLevel, username, bio }) => {
 
   return (
     <div>
-      <Heading>{username}</Heading>
+      {/* <Heading>{username}</Heading> */}
       <p>{bio}</p>
     </div>
   );
