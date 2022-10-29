@@ -10,27 +10,11 @@ const Sample19 = () => {
       {isError && <div>Error!</div>}
       {data && (
         <div>
-          {data.map(
-            (todo: {
-              id: React.Key | null | undefined;
-              title:
-                | string
-                | number
-                | boolean
-                | React.ReactElement<
-                    any,
-                    string | React.JSXElementConstructor<any>
-                  >
-                | React.ReactFragment
-                | React.ReactPortal
-                | null
-                | undefined;
-            }) => (
-              <div key={todo.id}>
-                <li>{todo.title}</li>
-              </div>
-            )
-          )}
+          {data?.map((todo: any) => (
+            <div key={todo.id}>
+              <li>{todo.title}</li>
+            </div>
+          ))}
         </div>
       )}
     </div>

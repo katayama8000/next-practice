@@ -1,6 +1,7 @@
 import 'src/lib/tailwind.css';
 import type { AppProps } from 'next/app';
 import { MantineProvider } from '@mantine/core';
+import { NotificationsProvider } from '@mantine/notifications';
 import Head from 'next/head';
 import { RecoilRoot } from 'recoil';
 import Link from 'next/link';
@@ -34,9 +35,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       <RecoilRoot>
         <QueryClientProvider client={queryClient}>
           <MantineProvider withGlobalStyles withNormalizeCSS>
-            <main className="m-auto mt-10 max-w-6xl">
-              <Component {...pageProps} />
-            </main>
+            <NotificationsProvider>
+              <main className="m-auto mt-10 max-w-6xl">
+                <Component {...pageProps} />
+              </main>
+            </NotificationsProvider>
           </MantineProvider>
         </QueryClientProvider>
       </RecoilRoot>
