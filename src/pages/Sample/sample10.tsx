@@ -1,38 +1,38 @@
-import React, { useReducer } from "react";
-import axios from "axios";
-import { Button } from "@mantine/core";
+import { Button } from '@mantine/core';
+import axios from 'axios';
+import { useReducer } from 'react';
 
 type actionType = {
-  type: "init" | "success" | "fail";
   payload: string;
+  type: 'init' | 'success' | 'fail';
 };
 
 const Sample10 = () => {
   const initialState = {
-    isLoading: true,
+    data: '',
     isError: false,
-    data: "",
+    isLoading: true,
   };
 
   type stateType = typeof initialState;
 
   // reducerの関数を定義する。
   const reducerFunction = (state: stateType, action: actionType) => {
-    console.log(state, action, "reducer");
+    console.log(state, action, 'reducer');
     switch (action.type) {
-      case "init":
+      case 'init':
         return initialState;
-      case "success":
+      case 'success':
         return {
-          isLoading: false,
-          isError: false,
           data: action.payload,
-        };
-      case "fail":
-        return {
+          isError: false,
           isLoading: false,
+        };
+      case 'fail':
+        return {
+          data: '',
           isError: true,
-          data: "",
+          isLoading: false,
         };
       default:
         return state;
@@ -42,31 +42,29 @@ const Sample10 = () => {
   const [dataState, dispatch] = useReducer(reducerFunction, initialState);
 
   const fetchData = () => {
-    axios.defaults.headers.post["Content-Type"] =
-      "application/json;charset=utf-8";
-    axios.defaults.headers.post["Access-Control-Allow-Origin"] =
-      "http://localhost:3000/";
+    axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
+    axios.defaults.headers.post['Access-Control-Allow-Origin'] = 'http://localhost:3000/';
     // githubのAPIを叩く。
-    const url = "https://api.github.com/users/katayama8000";
+    const url = 'https://api.github.com/users/katayama8000';
     axios
       .get(url)
       .then((result) => {
         const data = result.data;
-        dispatch({ type: "success", payload: data.login });
+        dispatch({ payload: data.login, type: 'success' });
       })
-      .catch((error) => {
-        dispatch({ type: "fail", payload: "" });
+      .catch(() => {
+        dispatch({ payload: '', type: 'fail' });
       });
   };
   return (
     <div>
       <h1>fetch</h1>
-      <Button onClick={fetchData} color="pink">
+      <Button onClick={fetchData} color='pink'>
         githubからデータを取得する
       </Button>
-      <p>{dataState.isLoading ? "Loading..." : "Finished!"}</p>
+      <p>{dataState.isLoading ? 'Loading...' : 'Finished!'}</p>
       <p>githubのユーザ名：{dataState.data}</p>
-      <p>{dataState.isError ? "error" : "success"}</p>
+      <p>{dataState.isError ? 'error' : 'success'}</p>
     </div>
   );
 };

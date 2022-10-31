@@ -1,30 +1,31 @@
-import { useQuery } from '@tanstack/react-query';
 import { showNotification } from '@mantine/notifications';
+import { useQuery } from '@tanstack/react-query';
 
 export const useGetTodo = () => {
   //react-queryのuseQueryを使ってデータを取得
-  const { data, isLoading, isError } = useQuery(
+  const { data, isError, isLoading } = useQuery(
     ['todo'],
-    () =>
-      fetch('https://jsonplaceholder.typicode.com/todos').then((res) => {
+    () => {
+      return fetch('https://jsonplaceholder.typicode.com/todos').then((res) => {
         return res.json();
-      }),
+      });
+    },
     {
-      onSuccess: (data) => {
-        // manitaneのToastを表示
+      onError: () => {
         showNotification({
-          title: 'Default notification',
-          message: 'Hey there, your code is awesome! 🤥',
+          message: 'Your request failed, please try again later',
+          title: 'error',
         });
       },
-      onError: (error) => {
+      onSuccess: () => {
+        // manitaneのToastを表示
         showNotification({
-          title: 'error',
-          message: 'Your request failed, please try again later',
+          message: 'Hey there, your code is awesome! 🤥',
+          title: 'Default notification',
         });
       },
     }
   );
 
-  return { data, isLoading, isError };
+  return { data, isError, isLoading };
 };

@@ -1,15 +1,17 @@
-import React from "react";
+import { useEffect, useState } from 'react';
 
 export const useFetch = (url: string) => {
-  const [isLoading, setIsLoading] = React.useState<boolean>(false);
-  const [data, setData] = React.useState<any>(null);
-  const [error, setError] = React.useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [data, setData] = useState<any>(null);
+  const [error, setError] = useState<string | null>(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const controller = new AbortController();
     setIsLoading(true);
     fetch(url, { signal: controller.signal })
-      .then((res) => res.json())
+      .then((res) => {
+        return res.json();
+      })
       .then((data) => {
         setData(data);
       })
@@ -25,5 +27,5 @@ export const useFetch = (url: string) => {
     };
   }, [url]);
 
-  return { isLoading, data, error };
+  return { data, error, isLoading };
 };

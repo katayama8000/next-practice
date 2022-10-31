@@ -10,7 +10,7 @@ export const LinkList: React.FC<Props> = ({ title, url }) => {
   return (
     <>
       <Link href={url}>{title}</Link>
-      <span className="mx-2">|</span>
+      <span className='mx-2'>|</span>
     </>
   );
 };
@@ -57,9 +57,7 @@ const Home: NextPage = () => {
       <div>
         <h1>Sample</h1>
         {LINKS.map((link) => {
-          return (
-            <LinkList key={link.title} title={link.title} url={link.url} />
-          );
+          return <LinkList key={link.title} title={link.title} url={link.url} />;
         })}
       </div>
       <hr />

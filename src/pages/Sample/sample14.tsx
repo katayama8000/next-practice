@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from 'react';
 
 const Sample14 = () => {
   const [inputId, setInputId] = useState<number[]>([1]);
@@ -11,16 +11,18 @@ const Sample14 = () => {
     <div>
       <h1>key</h1>
       <div>
-        {inputId.map((i, index) => (
-          <div key={i}>
-            <p>
-              id:{i}/{index}
-            </p>
-            <input type="text" />
-            <br />
-          </div>
-        ))}
-        <button onClick={onClick} className="button">
+        {inputId.map((i, index) => {
+          return (
+            <div key={i}>
+              <p>
+                id:{i}/{index}
+              </p>
+              <input type='text' />
+              <br />
+            </div>
+          );
+        })}
+        <button onClick={onClick} className='button'>
           入力フォームを増やす
         </button>
       </div>

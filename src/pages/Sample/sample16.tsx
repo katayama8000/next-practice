@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import { useState } from 'react';
 
 const Gender = {
-  MALE: 0,
-  FEMALE: 1,
   ALL: 2,
+  FEMALE: 1,
+  MALE: 0,
 } as const;
 
 type GenderType = typeof Gender[keyof typeof Gender];
@@ -13,22 +13,28 @@ const Sample16 = () => {
   return (
     <div>
       <input
-        type="radio"
+        type='radio'
         checked={gender === Gender.MALE}
-        onChange={() => setGender(Gender.MALE)}
+        onChange={() => {
+          return setGender(Gender.MALE);
+        }}
       />
       男性
       <input
-        type="radio"
+        type='radio'
         checked={gender === Gender.FEMALE}
-        onChange={() => setGender(Gender.FEMALE)}
+        onChange={() => {
+          return setGender(Gender.FEMALE);
+        }}
       />
       女性
       <input
-        type="radio"
+        type='radio'
         checked={gender === Gender.ALL}
         //   エラー
-        onChange={() => setGender(Gender.ALL)}
+        onChange={() => {
+          return setGender(Gender.ALL);
+        }}
       />
       全て
     </div>

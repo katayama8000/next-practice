@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import type { FC } from 'react';
 
 type Props = {
   data: jsonplaceholderType;
@@ -20,9 +20,9 @@ const sample12: FC<Props> = (props) => {
 
 // ssr
 export const getServerSideProps = async () => {
-  console.log("getServerSideProps");
+  console.log('getServerSideProps');
   // jsonplaceholderからデータを取得
-  const res = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+  const res = await fetch('https://jsonplaceholder.typicode.com/todos/1');
   const data = await res.json();
 
   return {

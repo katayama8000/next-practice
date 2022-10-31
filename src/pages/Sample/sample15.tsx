@@ -1,17 +1,17 @@
-import { Button } from "@mantine/core";
-import React from "react";
+import { Button } from '@mantine/core';
+import { useState } from 'react';
 
 const Sample15 = () => {
-  const [names, setNames] = React.useState<string[]>(["john", "jane", "joe"]);
+  const [names, setNames] = useState<string[]>(['john', 'jane', 'joe']);
 
   // ミュータブルに更新
   const onClick = () => {
     // reactのstateはミュータブルに更新すると、再レンダリングされない。
     // reactはオブジェクト同一性(差分)を見て再レンダリングする。
     // そのため、ミュータブルに更新すると再レンダリングされない。
-    names.push("push");
+    names.push('push');
     const copy = [...names];
-    copy.push("hoge");
+    copy.push('hoge');
     setNames(copy);
   };
 
@@ -20,9 +20,9 @@ const Sample15 = () => {
       <h1>immutable</h1>
       <div>
         <button onClick={onClick}>button</button>
-        {names.map((name, index) => (
-          <p key={index}>{name}</p>
-        ))}
+        {names.map((name, index) => {
+          return <div key={index}>{name}</div>;
+        })}
       </div>
       <Button
         onClick={() => {

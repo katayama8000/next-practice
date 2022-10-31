@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from "react";
+import { useReducer, useState } from 'react';
 
 type State = {
   id: number;
@@ -6,13 +6,13 @@ type State = {
 };
 
 type AddAction = {
-  type: "ADD";
   text: string;
+  type: 'ADD';
 };
 
 type DeleteAction = {
-  type: "DELETE";
   id: number;
+  type: 'DELETE';
 };
 
 type Action = AddAction | DeleteAction;
@@ -20,25 +20,29 @@ type Action = AddAction | DeleteAction;
 const initialState: State[] = [
   {
     id: 0,
-    text: "initial todo",
+    text: 'initial todo',
   },
 ];
 
 // stateとactionを受け取り、actionのtypeによってstateの更新方法を変える
 const reducer = (state: State[], action: Action): State[] => {
-  console.log(state, action, "reducer");
+  console.log(state, action, 'reducer');
   console.log(state.slice(-1));
   switch (action.type) {
-    case "ADD":
+    case 'ADD':
       return [...state, { id: state.slice(-1)[0].id + 1, text: action.text }];
-    case "DELETE":
-      if (state.length === 1) return state;
-      return state.filter((todo) => todo.id !== action.id);
+    case 'DELETE':
+      if (state.length === 1) {
+        return state;
+      }
+      return state.filter((todo) => {
+        return todo.id !== action.id;
+      });
   }
 };
 
 const Sample9 = () => {
-  const [text, setText] = useState("");
+  const [text, setText] = useState('');
   const [todoList, dispatch] = useReducer(reducer, initialState);
   return (
     <div>
@@ -47,25 +51,35 @@ const Sample9 = () => {
         <label>
           todo
           <input
-            type="text"
+            type='text'
             value={text}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setText(e.target.value)
-            }
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              return setText(e.target.value);
+            }}
           />
         </label>
-        <button onClick={() => dispatch({ type: "ADD", text: text })}>
+        <button
+          onClick={() => {
+            return dispatch({ text: text, type: 'ADD' });
+          }}
+        >
           Add todo
         </button>
         <ol>
-          {todoList.map((todo) => (
-            <div key={todo.id} className="flex">
-              <li className="">{todo.text}</li>
-              <button onClick={() => dispatch({ type: "DELETE", id: todo.id })}>
-                ✖
-              </button>
-            </div>
-          ))}
+          {todoList.map((todo) => {
+            return (
+              <div key={todo.id} className='flex'>
+                <li className=''>{todo.text}</li>
+                <button
+                  onClick={() => {
+                    return dispatch({ id: todo.id, type: 'DELETE' });
+                  }}
+                >
+                  ✖
+                </button>
+              </div>
+            );
+          })}
         </ol>
       </div>
     </div>

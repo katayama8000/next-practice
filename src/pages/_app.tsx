@@ -1,30 +1,26 @@
 import 'src/lib/tailwind.css';
-import type { AppProps } from 'next/app';
+
 import { MantineProvider } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { RecoilRoot } from 'recoil';
-import Link from 'next/link';
-import { TButton } from 'src/lib/TButton';
-import {
-  QueryClient,
-  QueryClientProvider,
-  useQuery,
-} from '@tanstack/react-query';
 import { useRouter } from 'next/router';
+import { RecoilRoot } from 'recoil';
+import { TButton } from 'src/lib/TButton';
 
 const queryClient = new QueryClient();
 
-function MyApp({ Component, pageProps }: AppProps) {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   const { push } = useRouter();
   return (
     <>
       <Head>
         <title>Next.js</title>
       </Head>
-      <div className="ml-[100px] mt-10">
+      <div className='ml-[100px] mt-10'>
         <TButton
-          color="yellow"
+          color='yellow'
           onClick={() => {
             push('/');
           }}
@@ -36,7 +32,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <QueryClientProvider client={queryClient}>
           <MantineProvider withGlobalStyles withNormalizeCSS>
             <NotificationsProvider>
-              <main className="m-auto mt-10 max-w-6xl">
+              <main className='m-auto mt-10 max-w-6xl'>
                 <Component {...pageProps} />
               </main>
             </NotificationsProvider>
@@ -45,6 +41,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       </RecoilRoot>
     </>
   );
-}
+};
 
 export default MyApp;

@@ -1,12 +1,12 @@
-import { FC } from "react";
+import type { FC } from 'react';
 
 type ProfileProps = {
+  bio: string;
   currentLevel: number;
   username: string;
-  bio: string;
 };
 
-export const Profile: FC<ProfileProps> = ({ currentLevel, username, bio }) => {
+export const Profile: FC<ProfileProps> = ({ bio, currentLevel, username }) => {
   const nextLevel = Math.min(currentLevel + 1, 6);
   const Heading = `h${nextLevel}`;
 

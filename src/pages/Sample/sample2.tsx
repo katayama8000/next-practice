@@ -1,5 +1,4 @@
-import { useGetJson } from "@hooks/useGetJson";
-import React from "react";
+import { useGetJson } from '@hooks/useGetJson';
 
 const Sample2 = () => {
   const value = useGetJson(1);

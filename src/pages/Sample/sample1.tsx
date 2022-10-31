@@ -1,20 +1,22 @@
-import React from "react";
+/* eslint-disable prefer-const */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
+import { useState } from 'react';
 
 const Sample1 = () => {
-  const [value, setValue] = React.useState<string>("Hello World");
-  const [allPromiseResolved, setAllPromiseResolved] =
-    React.useState<string>("");
-  const [firstPromiseResolved, setFirstPromiseResolved] = React.useState("");
+  const [value, setValue] = useState<string>('Hello World');
+  const [allPromiseResolved, setAllPromiseResolved] = useState<string>('');
+  const [firstPromiseResolved, setFirstPromiseResolved] = useState('');
   const promise1 = new Promise<string>((resolve, reject) => {
     window.setTimeout(() => {
-      resolve("Promise is resolved1 first");
+      resolve('Promise is resolved1 first');
       //reject("Promise is reject first");
     }, 2000);
   });
 
   const promise2 = new Promise<string>((resolve, reject) => {
     window.setTimeout(() => {
-      resolve("Promise is resolved2 second");
+      resolve('Promise is resolved2 second');
       //reject("Promise is reject second");
     }, 2000);
   });
@@ -23,7 +25,7 @@ const Sample1 = () => {
     .then((data) => {
       console.log(`first: ${data}`);
       setValue(data);
-      return data.concat("wwwwwwwwwwww");
+      return data.concat('wwwwwwwwwwww');
     })
     .catch((val) => {
       console.log(`catch: ${val}`);
@@ -61,7 +63,7 @@ const Sample1 = () => {
 
   const result = async () => {
     const ret = await asyncFunc();
-    console.log("ret", ret);
+    console.log('ret', ret);
   };
 
   result();

@@ -1,22 +1,28 @@
-import React from "react";
+import { useCallback, useMemo, useState } from 'react';
 
 const useCounter = () => {
-  const [state, setState] = React.useState<number>(0);
+  const [state, setState] = useState<number>(0);
 
-  const countUp = React.useCallback(() => {
-    setState((prev) => prev + 1);
+  const countUp = useCallback(() => {
+    setState((prev) => {
+      return prev + 1;
+    });
   }, []);
 
-  const countDown = React.useCallback(() => {
-    setState((prev) => prev - 1);
+  const countDown = useCallback(() => {
+    setState((prev) => {
+      return prev - 1;
+    });
   }, []);
 
-  return { state, countUp, countDown };
+  return { countDown, countUp, state };
 };
 
 const Sample3 = () => {
-  const { state, countUp, countDown } = useCounter();
-  const sum = React.useMemo(() => state * 2, [state]);
+  const { countDown, countUp, state } = useCounter();
+  const sum = useMemo(() => {
+    return state * 2;
+  }, [state]);
   return (
     <div>
       <div>{sum}</div>

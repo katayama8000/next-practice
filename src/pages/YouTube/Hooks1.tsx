@@ -1,12 +1,12 @@
-import React from "react";
+import { useRef } from 'react';
 
 const Hooks1 = () => {
-  const emailRef = React.useRef<HTMLInputElement>(null);
-  const passwordRef = React.useRef<HTMLInputElement>(null);
-  // const [email, setEmail] = React.useState<string>("");
-  // const [password, setPassword] = React.useState<string>("");
+  const emailRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
+  // const [email, setEmail] = useState<string>("");
+  // const [password, setPassword] = useState<string>("");
 
-  console.log("reRender");
+  console.log('reRender');
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -16,25 +16,25 @@ const Hooks1 = () => {
     <div>
       <h1>Hooks1</h1>
       <form onSubmit={onSubmit}>
-        <label htmlFor="email">Email : </label>
+        <label htmlFor='email'>Email : </label>
         <input
           // value={email}
           // onChange={(e) => setEmail(e.target.value)}
           ref={emailRef}
-          type="email"
-          id="email"
+          type='email'
+          id='email'
         />
         <br />
-        <label htmlFor="password">Password : </label>
+        <label htmlFor='password'>Password : </label>
         <input
           // value={password}
           // onChange={(e) => setPassword(e.target.value)}
           ref={passwordRef}
-          type="password"
-          id="password"
+          type='password'
+          id='password'
         />
         <br />
-        <button type="submit">Submit</button>
+        <button type='submit'>Submit</button>
       </form>
     </div>
   );

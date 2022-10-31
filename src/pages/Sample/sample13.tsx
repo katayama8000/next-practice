@@ -1,5 +1,5 @@
-import type { NextPage } from "next";
-import React from "react";
+/* eslint-disable react/destructuring-assignment */
+import type { NextPage } from 'next';
 
 type Props = {
   data: jsonplaceholderType;
@@ -21,9 +21,9 @@ const Sample13: NextPage<Props> = (props) => {
 
 // ssg
 export const getStaticProps = async () => {
-  console.log("getStaticProps");
+  console.log('getStaticProps');
   // jsonplaceholderからデータを取得
-  const res = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+  const res = await fetch('https://jsonplaceholder.typicode.com/todos/1');
   const data = await res.json();
 
   return {

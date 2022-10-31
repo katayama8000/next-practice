@@ -1,15 +1,17 @@
-import React from "react";
+import { useEffect, useState } from 'react';
 
 const Hooks3 = () => {
-  const [count, setCount] = React.useState<number>(0);
+  const [count, setCount] = useState<number>(0);
 
   const handleAdd = () => {
-    setCount((prevCount) => prevCount + 1);
+    setCount((prevCount) => {
+      return prevCount + 1;
+    });
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (count === 1) {
-      alert("true");
+      alert('true');
     }
   }, [count]);
   return (

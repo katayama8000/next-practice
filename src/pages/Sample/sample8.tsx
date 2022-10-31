@@ -1,5 +1,5 @@
-import { Timer } from "@component/Sample/Timer";
-import React, { useState } from "react";
+import { Timer } from '@component/Sample/Timer';
+import { useState } from 'react';
 
 const Sample8 = () => {
   const [isDisplay, setIsDisplay] = useState(true);
@@ -11,9 +11,7 @@ const Sample8 = () => {
     <div>
       <span>
         コンポーネントを
-        <button onClick={handleToggleDisplay}>
-          {isDisplay ? "Unmount" : "Mount"}
-        </button>
+        <button onClick={handleToggleDisplay}>{isDisplay ? 'Unmount' : 'Mount'}</button>
       </span>
       {isDisplay && <Timer setIsDisplay={setIsDisplay} />}
     </div>

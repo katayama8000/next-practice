@@ -1,13 +1,12 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
 
 const Sample18 = () => {
   // jsonplaceholderからデータをreact-queryで取得
-  const { data, isLoading, isError } = useQuery(['todo'], () =>
-    fetch('https://jsonplaceholder.typicode.com/todos').then((res) => {
+  const { data, isError, isLoading } = useQuery(['todo'], () => {
+    return fetch('https://jsonplaceholder.typicode.com/todos').then((res) => {
       return res.json();
-    })
-  );
+    });
+  });
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -27,19 +26,18 @@ const Sample18 = () => {
               | string
               | number
               | boolean
-              | React.ReactElement<
-                  any,
-                  string | React.JSXElementConstructor<any>
-                >
+              | React.ReactElement<any, string | React.JSXElementConstructor<any>>
               | React.ReactFragment
               | React.ReactPortal
               | null
               | undefined;
-          }) => (
-            <div key={todo.id}>
-              <li>{todo.title}</li>
-            </div>
-          )
+          }) => {
+            return (
+              <div key={todo.id}>
+                <li>{todo.title}</li>
+              </div>
+            );
+          }
         )}
       </div>
     );
