@@ -99,6 +99,13 @@ export const pagesPath = {
       },
     },
   },
+  Test: {
+    Home: {
+      $url: (url?: { hash?: string }) => {
+        return { hash: url?.hash, pathname: '/Test/Home' as const };
+      },
+    },
+  },
   YouTube: {
     Hooks1: {
       $url: (url?: { hash?: string }) => {
