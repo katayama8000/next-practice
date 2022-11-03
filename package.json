@@ -9,7 +9,8 @@
     "lint": "next lint --dir src",
     "lint:fix": "npm run lint --fix",
     "format": "prettier --write --ignore-path .gitignore \"./**/*.{js,jsx,ts,tsx,json,css}\"",
-    "test": "jest --env=jsdom --verbose"
+    "test": "jest --env=jsdom --verbose",
+    "test:create": "node src/__test__/app/sum.test.js"
   },
   "dependencies": {
     "@emotion/react": "^11.10.4",
