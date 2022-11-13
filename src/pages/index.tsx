@@ -42,6 +42,7 @@ const LINKS = [
   { title: 'h1~h6', url: 'Sample/sample17' },
   { title: 'react-query', url: 'Sample/sample18' },
   { title: 'react-query-Hooks', url: 'Sample/sample19' },
+  { title: 'complete-Promise', url: 'Sample/sample20' },
 ] as const;
 
 const YOUTUBE_LINKS = [
