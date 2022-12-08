@@ -24,7 +24,7 @@ const LINKS = [
   { title: 'Promise', url: 'Sample/sample1' },
   { title: 'swr', url: 'Sample/sample2' },
   { title: 'hooks', url: 'Sample/sample3' },
-  { title: 'chat', url: 'Sample/sample4' },
+  { title: 'chat', url: 'javascript:void(0)' },
   { title: 'recoil', url: 'Sample/sample5' },
   { title: 'useref-1', url: 'Sample/sample6' },
   { title: 'useref-2', url: 'Sample/sample7' },
@@ -40,6 +40,7 @@ const LINKS = [
   { title: 'h1~h6', url: 'Sample/sample17' },
   { title: 'react-query', url: 'Sample/sample18' },
   { title: 'react-query-Hooks', url: 'Sample/sample19' },
+  { title: 'useContext', url: 'Sample/sample20' },
 ] as const;
 
 const YOUTUBE_LINKS = [
