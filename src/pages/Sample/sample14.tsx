@@ -1,31 +1,40 @@
 import { useState } from 'react';
 
-const Sample14 = () => {
-  const [inputId, setInputId] = useState<number[]>([1]);
-  const onClick = () => {
-    const copy = [...inputId];
-    copy.unshift(inputId.length + 1);
-    setInputId(copy);
+const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => {
+  return {
+    id: `id${n}`,
+    value: n,
   };
+});
+const Sample14 = () => {
+  const [numbers, setNumbers] = useState(data);
+
+  const renderItems = (n: { id: string; value: number }) => {
+    return (
+      <h1
+        key={n.id}
+        onClick={() => {
+          deleteItem(n.id);
+        }}
+      >
+        {n.value}
+      </h1>
+    );
+  };
+
+  const deleteItem = (id: string) => {
+    setNumbers(
+      numbers.filter((n) => {
+        return n.id !== id;
+      })
+    );
+  };
+
   return (
     <div>
-      <h1>key</h1>
-      <div>
-        {inputId.map((i, index) => {
-          return (
-            <div key={i}>
-              <p>
-                id:{i}/{index}
-              </p>
-              <input type='text' />
-              <br />
-            </div>
-          );
-        })}
-        <button onClick={onClick} className='button'>
-          入力フォームを増やす
-        </button>
-      </div>
+      {numbers.map((n) => {
+        return renderItems(n);
+      })}
     </div>
   );
 };
