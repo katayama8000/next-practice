@@ -4,28 +4,28 @@ import { useCallback, useEffect, useState } from 'react';
 const FormPage = () => {
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
-  const [isExistFormContext, setIsExistFormContext] = useState<boolean>(false);
+  const [isExistFormContent, setIsExistFormContent] = useState<boolean>(false);
   const router = useRouter();
 
   const pageChangeHandler = useCallback(() => {
-    if (isExistFormContext) {
+    if (isExistFormContent) {
       const answer = window.confirm('本当にページ遷移しますか？');
       if (!answer) {
         throw 'Abort route';
       }
     }
-  }, [isExistFormContext]);
+  }, [isExistFormContent]);
 
   useEffect(() => {
     router.events.on('routeChangeStart', pageChangeHandler);
     return () => {
       router.events.off('routeChangeStart', pageChangeHandler);
     };
-  }, [pageChangeHandler, router.events]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pageChangeHandler]);
 
   useEffect(() => {
-    const content = name !== '' && email !== '' ? true : false;
-    setIsExistFormContext(content);
+    setIsExistFormContent(name !== '' && email !== '' ? true : false);
   }, [name, email]);
 
   return (
