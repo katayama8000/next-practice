@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
-  swcMinify: true,
+  // 画像の許可
+  images: {
+    domains: ['images.unsplash.com'],
+  },
   reactStrictMode: true,
+  swcMinify: true,
 };
