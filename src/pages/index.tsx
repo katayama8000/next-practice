@@ -2,8 +2,8 @@ import type { NextPage } from 'next';
 import Link from 'next/link';
 
 type Props = {
-  title: titleType | youTubeTitleType;
-  url: urlType | youTubeUrlType;
+  title: titleType | youTubeTitleType | uiTitleType;
+  url: urlType | youTubeUrlType | uiUrlType;
 };
 
 export const LinkList: React.FC<Props> = ({ title, url }) => {
@@ -19,6 +19,8 @@ type urlType = typeof LINKS[number]['url'];
 type titleType = typeof LINKS[number]['title'];
 type youTubeUrlType = typeof YOUTUBE_LINKS[number]['url'];
 type youTubeTitleType = typeof YOUTUBE_LINKS[number]['title'];
+type uiUrlType = typeof UI_LINKS[number]['url'];
+type uiTitleType = typeof UI_LINKS[number]['title'];
 
 const LINKS = [
   { title: 'Promise', url: 'Sample/sample1' },
@@ -53,6 +55,8 @@ const YOUTUBE_LINKS = [
   { title: 'Hooks6', url: 'YouTube/Hooks6' },
 ] as const;
 
+const UI_LINKS = [{ title: 'card', url: 'UI/index1' }] as const;
+
 const Home: NextPage = () => {
   return (
     <div>
@@ -68,6 +72,10 @@ const Home: NextPage = () => {
         return <LinkList key={link.title} title={link.title} url={link.url} />;
       })}
       <hr />
+      <h1>UI</h1>
+      {UI_LINKS.map((link) => {
+        return <LinkList key={link.title} title={link.title} url={link.url} />;
+      })}
       <h1>Hello Next.js 👋</h1>
       <article>
         <ol>
