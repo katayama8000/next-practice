@@ -513,6 +513,11 @@
   resolved "https://registry.yarnpkg.com/@socket.io/component-emitter/-/component-emitter-3.1.0.tgz#96116f2a912e0c02817345b3c10751069920d553"
   integrity sha512-+9jVqKhRSpsc591z5vX+X5Yyw+he/HCB4iQ/RYxw35CEPaY1gnsNE43nf9n9AaYjAQrTiI/mOwKUKdUs9vf7Xg==
 
+"@sugarform/core@1.0.0-beta.14":
+  version "1.0.0-beta.14"
+  resolved "https://registry.yarnpkg.com/@sugarform/core/-/core-1.0.0-beta.14.tgz#5a1933fe0b3b7ab086a7c7cccdb74b80f59773ed"
+  integrity sha512-uQeME57Cm3emG/RM8bHYO/kxb7s1xDCprgNib/HOx05FSFZPoODRRL1ZlYsSdbG9Zbcv69lwQU5SZiFNnBFJLA==
+
 "@swc/helpers@0.4.3":
   version "0.4.3"
   resolved "https://registry.yarnpkg.com/@swc/helpers/-/helpers-0.4.3.tgz#16593dfc248c53b699d4b5026040f88ddb497012"

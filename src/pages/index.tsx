@@ -44,6 +44,7 @@ const LINKS = [
   { title: 'react-query-Hooks', url: 'Sample/sample19' },
   { title: 'useContext', url: 'Sample/sample20' },
   { title: 'form-alert', url: 'Sample/sample21' },
+  { title: 'sugarForm', url: 'Sample/sample22' },
 ] as const;
 
 const YOUTUBE_LINKS = [
