@@ -46,6 +46,8 @@ const LINKS = [
   { title: 'form-alert', url: 'Sample/sample21' },
   { title: 'sugarForm', url: 'Sample/sample22' },
   { title: 'render-hooks', url: 'Sample/sample23' },
+  { title: 'ComponentProps', url: 'Sample/sample24' },
+  { title: 'addEventListner', url: 'Sample/sample25' },
 ] as const;
 
 const YOUTUBE_LINKS = [

@@ -25,7 +25,6 @@ fi
 
 # ファイルの中身を作成する
 echo "
-
 const $PAGE_NAME = () => {
   return (
     <div>
