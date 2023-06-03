@@ -1,14 +1,12 @@
 import type { ComponentProps } from 'react';
 
-type InputProps = ComponentProps<'input'>; // <- here
-
-export const Input = ({ onBlur, onChange, onFocus, value }: InputProps) => {
+export const Input = (
+  { onBlur, onChange, onFocus, value }: ComponentProps<'input'> // <- here
+) => {
   return <input value={value} onChange={onChange} onBlur={onBlur} onFocus={onFocus} />;
 };
 
-type ButtonProps = ComponentProps<'button'>; // <- here
-
-export const Button = ({ children, onClick, type }: ButtonProps) => {
+export const Button = ({ children, onClick, type }: ComponentProps<'button'>) => {
   return (
     <button onClick={onClick} type={type}>
       {children}
