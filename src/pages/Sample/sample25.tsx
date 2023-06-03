@@ -32,6 +32,13 @@ const Sample25 = () => {
         }}
       />
       <button onClick={func}>click</button>
+      <button
+        onClick={() => {
+          console.log(window);
+        }}
+      >
+        wiwdow
+      </button>
     </div>
   );
 };
