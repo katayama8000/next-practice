@@ -14,8 +14,8 @@ const Sample7 = () => {
     return setText(e.target.value);
   };
 
-  const [count, setCount] = useState(0);
-  const countRef = useRef(0);
+  const [count, setCount] = useState<number>(0);
+  const countRef = useRef<number>(0);
   const handleAddNum = () => {
     return setCount(count + 1);
   };
