@@ -48,6 +48,8 @@ const LINKS = [
   { title: 'render-hooks', url: 'Sample/sample23' },
   { title: 'ComponentProps', url: 'Sample/sample24' },
   { title: 'addEventListner', url: 'Sample/sample25' },
+  { title: 'useStateHook1', url: 'Sample/sample26' },
+  { title: 'useStateHook2', url: 'Sample/sample27' },
 ] as const;
 
 const YOUTUBE_LINKS = [
