@@ -6,7 +6,7 @@ const Gender = {
   MALE: 0,
 } as const;
 
-type GenderType = typeof Gender[keyof typeof Gender];
+type GenderType = (typeof Gender)[keyof typeof Gender];
 
 const Sample16 = () => {
   const [gender, setGender] = useState<GenderType>(0);
