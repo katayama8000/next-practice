@@ -113,4 +113,4 @@ export const pagesPath = {
   },
 };
 
-export type PagesPath = typeof pagesPath;
+export type PagesPath = typeof pagesPath
