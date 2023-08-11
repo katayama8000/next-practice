@@ -15,12 +15,12 @@ export const LinkList: React.FC<Props> = ({ title, url }) => {
   );
 };
 
-type urlType = typeof LINKS[number]['url'];
-type titleType = typeof LINKS[number]['title'];
-type youTubeUrlType = typeof YOUTUBE_LINKS[number]['url'];
-type youTubeTitleType = typeof YOUTUBE_LINKS[number]['title'];
-type uiUrlType = typeof UI_LINKS[number]['url'];
-type uiTitleType = typeof UI_LINKS[number]['title'];
+type urlType = (typeof LINKS)[number]['url'];
+type titleType = (typeof LINKS)[number]['title'];
+type youTubeUrlType = (typeof YOUTUBE_LINKS)[number]['url'];
+type youTubeTitleType = (typeof YOUTUBE_LINKS)[number]['title'];
+type uiUrlType = (typeof UI_LINKS)[number]['url'];
+type uiTitleType = (typeof UI_LINKS)[number]['title'];
 
 const LINKS = [
   { title: 'Promise', url: 'Sample/sample1' },
@@ -50,6 +50,7 @@ const LINKS = [
   { title: 'addEventListner', url: 'Sample/sample25' },
   { title: 'useStateHook1', url: 'Sample/sample26' },
   { title: 'useStateHook2', url: 'Sample/sample27' },
+  { title: 'useEffect-obj', url: 'Sample/sample28' },
 ] as const;
 
 const YOUTUBE_LINKS = [
