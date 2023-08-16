@@ -51,6 +51,7 @@ const LINKS = [
   { title: 'useStateHook1', url: 'Sample/sample26' },
   { title: 'useStateHook2', url: 'Sample/sample27' },
   { title: 'useEffect-obj', url: 'Sample/sample28' },
+  { title: 'useEffect-func', url: 'Sample/sample29' },
 ] as const;
 
 const YOUTUBE_LINKS = [
