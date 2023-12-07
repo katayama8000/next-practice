@@ -1,3 +1,5 @@
+import type { FC } from "react";
+
 type TButtonProps = {
   block?: boolean;
   children: React.ReactNode;
@@ -11,9 +13,8 @@ type TButtonProps = {
 };
 
 const style = {
-  block: `flex justify-center w-full`, //最大幅まで伸ばす
+  block: `flex justify-center w-full`,
   colors: {
-    //色
     blue: `bg-blue-600 focus:ring-2 focus:ring-offset-2 hover:bg-blue-700 focus:ring-blue-500`,
     dark: `bg-black focus:ring-2 focus:ring-offset-2 hover:bg-black-600 focus:ring-gray-500`,
     green: `bg-green-600 focus:ring-2 focus:ring-offset-2 hover:bg-green-700 focus:ring-green-500`,
@@ -21,17 +22,16 @@ const style = {
     red: `bg-red-600 focus:ring-2 focus:ring-offset-2 hover:bg-red-700 focus:ring-red-500`,
     yellow: `bg-yellow-500 focus:ring-2 focus:ring-offset-2 hover:bg-yellow-600 focus:ring-yellow-500 `,
   },
-  default: `text-white focus:outline-none font-medium py-2 px-4`, //デフォルト
-  rounded: `rounded-full`, //角を丸くする
+  default: `text-white focus:outline-none font-medium py-2 px-4`,
+  rounded: `rounded-full`,
   sizes: {
     lg: 'text-lg',
     md: '',
-    //サイズ
     sm: 'text-sm',
   },
 };
 
-export const TButton = ({
+export const TButton:FC<TButtonProps> = ({
   block = false,
   children,
   className,
@@ -41,7 +41,7 @@ export const TButton = ({
   rounded,
   size = 'md',
   submit,
-}: TButtonProps) => {
+}) => {
   return (
     <button
       type={submit ? 'submit' : 'button'}
