@@ -1,12 +1,7 @@
 import axios from 'axios';
-import type { FC} from 'react';
-import  { useEffect,useState } from 'react';
+import type { FC } from 'react';
+import { useEffect, useState } from 'react';
 
-// interface Args {
-//   body: string;
-//   expo_push_token: string;
-//   title: string;
-// }
 
 interface Response {
   success: boolean;
@@ -31,12 +26,12 @@ const Sample30: FC = () => {
   }, []);
 
   const handlePostSubmit = async () => {
-    const expoPushToken = "ExponentPushToken[b5nR6zALafV431QtOC7byo]";
+    const expoPushToken = 'ExponentPushToken[b5nR6zALafV431QtOC7byo]';
     try {
       const response = await axios.post('http://127.0.0.1:3000/submit', {
-        body: "test-from-nextjs",
+        body: 'test-from-nextjs',
         expo_push_token: expoPushToken,
-        title: "test-from-nextjs",
+        title: 'test-from-nextjs',
       });
 
       setPostResponse(response.data);

@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import type { FC } from 'react';
 
 type TButtonProps = {
   block?: boolean;
@@ -31,7 +31,7 @@ const style = {
   },
 };
 
-export const TButton:FC<TButtonProps> = ({
+export const TButton: FC<TButtonProps> = ({
   block = false,
   children,
   className,

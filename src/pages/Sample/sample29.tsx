@@ -4,7 +4,7 @@ const Sample29 = () => {
   const [num, setNum] = useState<number>(0);
   const add = useCallback(() => {
     return 10;
-  },[])
+  }, []);
 
   useEffect(() => {
     const ret = add();
