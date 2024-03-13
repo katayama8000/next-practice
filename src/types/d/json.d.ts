@@ -1,5 +1,3 @@
-// jsonplaceholderの型定義
-
 interface jsonplaceholderType {
   id: number;
   body: string;
